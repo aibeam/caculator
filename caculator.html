@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MacBook Calcluator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+
+    <style media="screen">
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      #cal{
+        width: 262px;
+        border: 1px solid #7d7d7d;
+        border-radius: 7px;
+      }
+      #cal form{
+        display: grid;
+        grid-template-columns: repeat(4,65px);
+        grid-auto-rows: 63px;
+      }
+      input{
+        border: 1px solid #7d7d7d;
+        background: #f2f2f2;
+        font-size: 24px;
+        font-family: 'Poppins', sans-serif;
+        cursor: pointer;
+        grid-auto-rows: 57px;
+      }
+      .result{
+        border-radius: 6px 6px 0 0;
+        background: #404040;
+        grid-column: span 4;
+        grid-row: 65px;
+        color: #fff;
+        font-size: 35px;
+        text-align: right;
+        padding: 20px;
+      }
+      .clear{
+        grid-column: span 3;
+      }
+      .operator{
+        background: #f5a938;
+      }
+      .zero{
+        grid-column: span 2;
+        text-align: left;
+        border-radius: 0 0 0 6px;
+      }
+      .equal {
+        border-radius: 0 0 6px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cal">
+      <form name="forms">
+        <input type="text" class="result" name="result" readonly>
+        <input type="button" class="clear" value="C" onclick="document.forms.result.value=''">
+        <input type="button" class="operator" value="÷" onclick="document.forms.result.value+='/'">
+        <input type="button" value="7" onclick="document.forms.result.value+='7'">
+        <input type="button" value="8" onclick="document.forms.result.value+='8'">
+        <input type="button" value="9" onclick="document.forms.result.value+='9'">
+        <input type="button" class="operator" value="×" onclick="document.forms.result.value+='*'">
+        <input type="button" value="4" onclick="document.forms.result.value+='4'">
+        <input type="button" value="5" onclick="document.forms.result.value+='5'">
+        <input type="button" value="6" onclick="document.forms.result.value+='6'">
+        <input type="button" class="operator" value="-" onclick="document.forms.result.value+='-'">
+        <input type="button" value="1" onclick="document.forms.result.value+='1'">
+        <input type="button" value="2" onclick="document.forms.result.value+='2'">
+        <input type="button" value="3" onclick="document.forms.result.value+='3'">
+        <input type="button" class="operator" value="+" onclick="document.forms.result.value+='+'">
+        <input type="button" class="zero" value="    0" onclick="document.forms.result.value+='0'">
+        <input type="button" value="." onclick="document.forms.result.value+='.'">
+        <input type="button" class="operator equal" value="＝" onclick="document.forms.result.value=eval(document.forms.result.value)">
+      </form>
+      </div>
+  </body>
+</html>
